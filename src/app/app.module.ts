@@ -3,22 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TransactionsReportComponent } from './reports/transactions/transactions-report/transactions-report.component';
 import { HoldingsReportComponent } from './reports/holdings/holdings-report/holdings-report.component';
-import { ColumnChooserComponent } from './reports/shared/column-chooser/column-chooser.component';
-import { DataGridComponent } from './reports/shared/data-grid/data-grid.component';
+import { TransactionModuleModule } from './transactions/transaction-module/transaction-module.module';
+import { SharedModule } from './shared/shared/shared.module';
+import { HoldingsModule } from './holdings/holdings/holdings.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TransactionsReportComponent,
-    HoldingsReportComponent,
-    ColumnChooserComponent,
-    DataGridComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HoldingsModule.forRoot('Holdings'),
+    TransactionModuleModule.forRoot('Transaction'),
   ],
   providers: [],
   bootstrap: [AppComponent]

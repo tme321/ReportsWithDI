@@ -10,9 +10,6 @@ export function transactionReportService() {
   selector: 'app-transactions-report',
   templateUrl: './transactions-report.component.html',
   styleUrls: ['./transactions-report.component.scss'],
-  providers: [
-    {provide: REPORT_SERVICE, useFactory: transactionReportService }
-  ]
 })
 export class TransactionsReportComponent implements OnInit {
 

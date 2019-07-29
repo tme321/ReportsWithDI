@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Host, Inject } from '@angular/core';
+import { REPORT_SERVICE, ReportService } from 'src/app/report-service.interface';
 
 @Component({
   selector: 'app-column-chooser',
@@ -9,10 +10,13 @@ export class ColumnChooserComponent implements OnInit {
 
   @Input() columns: any;
 
-  constructor() { }
+  constructor(
+    @Inject(REPORT_SERVICE) private reportsService: ReportService,
+  ) { }
 
 
   ngOnInit() {
+    console.log(this.reportsService.getData());
   }
 
 }
