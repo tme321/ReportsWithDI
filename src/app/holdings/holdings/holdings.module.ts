@@ -13,20 +13,8 @@ import { REPORT_SERVICE, reportServiceFactory, REPORT_TYPE } from 'src/app/repor
     CommonModule,
     SharedModule
   ],
-  providers: [
-    { provide: REPORT_SERVICE, useFactory: reportServiceFactory, deps: [REPORT_TYPE ]
-  }
-  ],
   exports: [HoldingsReportComponent]
 })
 export class HoldingsModule {
-  static forRoot(reportType: string): ModuleWithProviders {
-    debugger;
-    return {
-      ngModule: HoldingsModule,
-      providers: [
-        {provide: REPORT_TYPE, useValue: reportType}
-      ]
-    };
-  }
+
  }

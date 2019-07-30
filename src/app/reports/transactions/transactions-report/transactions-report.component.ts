@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { REPORT_SERVICE, ReportService } from '../../../report-service.interface';
+import { REPORT_SERVICE, ReportService, REPORT_TYPE, reportServiceFactory } from '../../../report-service.interface';
 import { TransactionReportServiceService } from '../services/transaction-report-service.service';
 
 export function transactionReportService() {
@@ -10,6 +10,10 @@ export function transactionReportService() {
   selector: 'app-transactions-report',
   templateUrl: './transactions-report.component.html',
   styleUrls: ['./transactions-report.component.scss'],
+  providers: [
+      { provide: REPORT_TYPE, useValue: 'Transaction' },
+      { provide: REPORT_SERVICE, useFactory: reportServiceFactory,  deps: [REPORT_TYPE]}
+  ]
 })
 export class TransactionsReportComponent implements OnInit {
 

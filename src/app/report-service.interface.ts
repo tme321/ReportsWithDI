@@ -8,7 +8,6 @@ export let REPORT_TYPE = new InjectionToken('REPORT_TYPE');
 
 
 export let reportServiceFactory = (reportType: string) => {
-    debugger;
     switch (reportType) {
         case 'Transaction':
             return new TransactionReportServiceService();
