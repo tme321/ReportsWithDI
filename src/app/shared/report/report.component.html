@@ -1,0 +1,3 @@
+<app-data-grid [data]="data" (dgClick)="onDgClick($event)"></app-data-grid>
+<app-column-chooser [columns]="columns" (ccClick)="onCcClick($event)"></app-column-chooser>
+<p *ngIf="drillThrough"> drill through enabled </p>

@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TransactionModuleModule } from './transactions/transaction-module/transaction-module.module';
-import { HoldingsModule } from './holdings/holdings/holdings.module';
-import { NestedComponent } from './reports/shared/data-grid/nested/nested.component';
+import { HoldingsModule } from './features/holdings/holdings.module';
+import { TransactionModule } from './features/transactions/transaction.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +14,8 @@ import { NestedComponent } from './reports/shared/data-grid/nested/nested.compon
     BrowserModule,
     AppRoutingModule,
     HoldingsModule,
-    TransactionModuleModule,
+    TransactionModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
